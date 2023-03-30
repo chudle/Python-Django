@@ -1,8 +1,9 @@
 a = int(input())
 b = int(input())
-if a > (b * 3):
-    print('a >> b')
+if a > b * 3:
+    print("a >> b")
 elif a > b:
-    print('a > b')
+    print("a > b")
 elif a < b:
-    print('a < b')
+    print("a < b")
+print('eee')
