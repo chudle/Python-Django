@@ -60,28 +60,25 @@ while True:
             print("B - ", end='')
             b = int(input())
             if a <= b:
-                print(random.randint(a, b))
+                print(randint(a, b))
             else:
                 print("?")
         case "!":
             print("X - ", end='')
             x = float(input())
-            i = 1
-            j = 1
-            if x > 0:
-                while i <= x:
-                   j = j * i
-                   i = i + 1
-            else: 
-                i = i - 2
-                while i >= x:
-                   j *= i
-                   i -= 1
-            print(j)
+            if x >= 0:
+                r = factorial(x)
+                print(r)
+            else:
+                print("?")
         case "C":
             print("X - ", end='')
             x = float(input())
-            print(math.acos(x))
+            if abs(x) <= 1:
+                r = acos(x)
+                print(r)
+            else:
+                print("?")
         case default:
             print("?")
     print("")
