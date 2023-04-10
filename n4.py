@@ -1,84 +1,57 @@
 import random
 import math
 
-print("+ - * / ^ | R ! C\n")
+print("+ - * / ^ | R ! C q\n")
 while True:
     op = input()
     match op:
         case "+":
-            print("X - ", end='')
-            x = float(input())
-            print("Y - ", end='')
-            y = float(input())
+            x = float(input("X - "))
+            y = float(input("Y - "))
             print(x + y)
         case "-":
-            print("X - ", end='')
-            x = float(input())
-            print("Y - ", end='')
-            y = float(input())
+            x = float(input("X - "))
+            y = float(input("Y - "))
             print(x - y)
         case "*":
-            print("X - ", end='')
-            x = float(input())
-            print("Y - ", end='')
-            y = float(input())
+            x = float(input("X - "))
+            y = float(input("Y - "))
             print(x * y)
         case "/":
-            print("X - ", end='')
-            x = float(input())
-            print("Y - ", end='')
-            y = float(input())
+            x = float(input("X - "))
+            y = float(input("Y - "))
             if y != 0:
                 print(x / y)
             else:
                 print("?")
         case "^":
-            print("X - ", end='')
-            x = float(input())
-            print("Y - ", end='')
-            y = int(input())
-            f = 0
-            if y < 0:
-                y = abs(y)
-                f = 1
-            r = 1
-            i = 0
-            while i < y:
-                r = r * x
-                i = i + 1
-            if f == 1:
-                print(1 / r)
-            else:
-                print(r)
+            x = float(input("X - "))
+            y = float(input("Y - "))
+            print(x ** y)
         case "|":
-            print("X - ", end='')
-            x = float(input())
+            x = float(input("X - "))
             print(abs(x))
         case "R":
-            print("A - ", end='')
-            a = int(input())
-            print("B - ", end='')
-            b = int(input())
+            a = float(input("A - "))
+            b = float(input("B - "))
             if a <= b:
-                print(randint(a, b))
+                print(random.randint(a, b))
             else:
                 print("?")
         case "!":
-            print("X - ", end='')
-            x = float(input())
+            x = int(input("X - "))
             if x >= 0:
-                r = factorial(x)
-                print(r)
+                print(math.factorial(x))
             else:
                 print("?")
         case "C":
-            print("X - ", end='')
-            x = float(input())
+            x = float(input("X - "))
             if abs(x) <= 1:
-                r = acos(x)
-                print(r)
+                print(math.acos(x))
             else:
                 print("?")
+        case "q":
+            break
         case default:
             print("?")
     print("")
