@@ -1,7 +1,9 @@
 import re
 
-string = re.sub(r'[^\w\s]','', str(input()))
-words = string.split()
+string = input("Введите текст: ")
+string1 = re.sub(r'[^\w\s]', '', string)
+# print("(DEBUG) string1: ", string1)
+words = string1.split()
 m_common = ''
 c_common = 0
 m_length = ''
