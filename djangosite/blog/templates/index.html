@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<title>Главная страница</title>
+</head>
+<body class="m-3">
+    <h2>🏠 Главная страница</h2>
+    {% if request.user.is_authenticated %}
+		<p>Ваш логин: {{ request.user }} - 
+		<a href='{% url "logout" %}'>Выйти из аккаунта</a></p>
+	{% else %}
+		<p>Гостевой доступ - <a href='{% url "login" %}'>Вход</a> / 
+		<a href='{% url "register" %}'>Регистрация</a></p>
+	{% endif %} <hr>
+    <h2>Свежие новости:</h2>
+    {% for ad in ad %}
+        <p><a href="{% url 'news_info' ad.pk %}">{{ad.title}}</a> (автор: {{ad.author}})</p>
+    {% endfor %}
+	{% if request.user.is_authenticated %}
+    <hr><p><a href='{% url "new" %}'>Добавить новую запись</a></p>
+	{% endif %}
+</body>
+</html>
